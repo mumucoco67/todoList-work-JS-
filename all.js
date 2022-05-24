@@ -36,26 +36,26 @@ function eventSaveTxt() {
   }
 }
 //點擊至完成清單
-check.addEventListener("click", function (e) {
-  eventCheckbox();
-});
-function eventCheckbox() {
-  let str = "";
-  if (e.click() === true) {
-    data.forEach(function (item, index) {
-      str += `<li><input class="check" type="checkbox" value="完成">${item.content}<input class="delete" data-num=${index} type="button" value="X"> </li>`;
+// check.addEventListener("click", function (e) {
+//   eventCheckbox();
+// });
+// function eventCheckbox() {
+//   let str = "";
+//   if (e.click() === true) {
+//     data.forEach(function (item, index) {
+//       str += `<li><input class="check" type="checkbox" value="完成">${item.content}<input class="delete" data-num=${index} type="button" value="X"> </li>`;
 
-      return (finsih.innerHTML = str);
-    });
-  }
-}
-console.log(eventCheckbox());
+//       return (finsih.innerHTML = str);
+//     });
+//   }
+// }
+// console.log(eventCheckbox());
 
 //刪除
 
 list.addEventListener("click", function (e) {
   console.log(e.target.nodeName);
-  if (e.target.nodeName == "input.delete") {
+  if (e.target.nodeName === "INPUT") {
     let num = e.target.getAttribute("data-num");
     data.splice(num, 1);
     renderData();
