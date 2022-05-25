@@ -10,13 +10,32 @@
   <body>
     <div class="todo-list">
       <h1>待辦事項</h1>
-      <input type="text" class="txt" placeholder="please text content" />
-      <input type="button" class="save" value="save" />
-      <ul class="list"></ul>
-      <div class="finish">
-        <h1>完成事項</h1>
-        <ul class="finish-list"></ul>
+      <div class="savegroup">
+        <input type="text" class="txt" placeholder="please text content" />
+        <input type="button" class="save" value="save" />
       </div>
+      <!-- 代辦清單 -->
+      <ul class="list">
+        <li>
+          <input class="checkbox" type="checkbox" value="完成" />
+          代辦事項
+          <button class="delete" data-num="${index}" type="button" value="刪除">
+            刪除
+          </button>
+        </li>
+      </ul>
+      <!-- 完成清單 -->
+
+      <h1>完成事項</h1>
+      <ul class="finishList">
+        <li>
+          <input class="checkbox" type="checkbox" value="完成" />
+          代辦事項
+          <button class="delete" data-num="${index}" type="button" value="刪除">
+            刪除
+          </button>
+        </li>
+      </ul>
     </div>
     <script src="./all.js"></script>
   </body>

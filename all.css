@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,6 +13,7 @@ body {
 }
 
 .todo-list {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,13 +21,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 75px 10px 30px;
+  padding: 20px 80px 80px 80px;
   background: #162740;
-  border: transparent;
   color: #fff;
 }
 
-.todo-list .list {
+.todo-list h1 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.todo-list .savegroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,22 +40,45 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 40px 0;
-  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.todo-list .list {
+  margin: 0 auto;
+  font-size: 18px;
   font-family: Lato, sans-serif;
   color: #f1faee;
   cursor: pointer;
   list-style: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.todo-list .list .check {
-  width: 25px;
-  height: 25px;
+.todo-list .list .checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
   border: 2px solid #f1faee;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.todo-list .list .delete {
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: center;
 }
 /*# sourceMappingURL=all.css.map */

@@ -3,14 +3,22 @@ const txt = document.querySelector(".txt");
 const save = document.querySelector(".save");
 const list = document.querySelector(".list");
 const del = document.querySelector(".delete");
-const check = document.querySelector(".check");
-const finish = document.querySelector(".finish-list");
+const checkbox = document.querySelector(".checkbox");
+const finishList = document.querySelector(".finishList");
+
+console.log(finishList);
 
 let data = [];
 function renderData() {
   let str = "";
   data.forEach(function (item, index) {
-    str += `<li><input class="check" type="checkbox" value="完成">${item.content}<input class="delete" data-num=${index} type="button" value="X"> </li>`;
+    str += `<li>
+          <input class="checkbox" type="checkbox" value="完成" />
+          ${item.content}
+          <button class="delete" data-num="${index}" type="button" value="刪除">
+            刪除
+          </button>
+        </li>`;
   });
 
   list.innerHTML = str;
@@ -32,30 +40,15 @@ function eventSaveTxt() {
     obj.content = txt.value;
     data.push(obj);
     renderData();
-    txt.value = ""; //輸入完空值
+    txt.value = ""; //輸入後空值
   }
 }
-//點擊至完成清單
-// check.addEventListener("click", function (e) {
-//   eventCheckbox();
-// });
-// function eventCheckbox() {
-//   let str = "";
-//   if (e.click() === true) {
-//     data.forEach(function (item, index) {
-//       str += `<li><input class="check" type="checkbox" value="完成">${item.content}<input class="delete" data-num=${index} type="button" value="X"> </li>`;
-
-//       return (finsih.innerHTML = str);
-//     });
-//   }
-// }
-// console.log(eventCheckbox());
 
 //刪除
 
 list.addEventListener("click", function (e) {
   console.log(e.target.nodeName);
-  if (e.target.nodeName === "INPUT") {
+  if (e.target.nodeName === "BUTTON") {
     let num = e.target.getAttribute("data-num");
     data.splice(num, 1);
     renderData();
@@ -63,3 +56,21 @@ list.addEventListener("click", function (e) {
 });
 
 // //加到完成清單
+
+finishList.addEventListener("click", function (e) {
+  console.log(e.target.nodeName);
+  if (e.target.nodeName === "INPUT") {
+    let str = "";
+    data.forEach(function (item, index) {
+      str += `<li>
+          <input class="checkbox" type="checkbox" value="完成" />
+          ${item.content}
+          <button class="delete" data-num="${index}" type="button" value="刪除">
+            刪除
+          </button>
+        </li>`;
+    });
+
+    finishList.innerHTML = str;
+  }
+});
